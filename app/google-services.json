@@ -10,7 +10,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:455921305340:android:fcfef757a832647b",
         "android_client_info": {
-          "package_name": "com.google.firebase.quickstart.database"
+          "package_name": "com.google.firebase.caronas"
         }
       },
       "oauth_client": [
@@ -18,7 +18,7 @@
           "client_id": "455921305340-ve6sk1337srlg3vu2a2sril6eckao3n1.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.google.firebase.quickstart.database",
+            "package_name": "com.google.firebase.caronas",
             "certificate_hash": "0050fe2a5a62a9455c3cae9bbd6af86a689a8c74"
           }
         },
