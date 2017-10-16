@@ -9,7 +9,7 @@ import android.support.v4.view.ViewPager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import com.google.firebase.caronas.R;
+
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.caronas.fragment.MyPostsFragment;
 import com.google.firebase.caronas.fragment.MyTopPostsFragment;
