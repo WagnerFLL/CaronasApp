@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "455921305340",
+    "firebase_url": "https://caronasapp1.firebaseio.com",
+    "project_id": "caronasapp1",
+    "storage_bucket": "caronasapp1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:455921305340:android:fcfef757a832647b",
+        "android_client_info": {
+          "package_name": "com.google.firebase.quickstart.database"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "455921305340-ve6sk1337srlg3vu2a2sril6eckao3n1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.google.firebase.quickstart.database",
+            "certificate_hash": "0050fe2a5a62a9455c3cae9bbd6af86a689a8c74"
+          }
+        },
+        {
+          "client_id": "455921305340-ggor1h1qojt7466v2ghnti7si974nf6g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDD4OFgx-tAWyTqIjakzknFIiBh6cn3Xk4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "455921305340-ggor1h1qojt7466v2ghnti7si974nf6g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
