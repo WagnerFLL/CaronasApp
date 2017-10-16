@@ -7,15 +7,14 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
-
+import com.google.firebase.caronas.R;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.quickstart.database.models.Post;
-import com.google.firebase.quickstart.database.models.User;
-
+import com.google.firebase.caronas.models.Post;
+import com.google.firebase.caronas.models.User;
 import java.util.HashMap;
 import java.util.Map;
 
