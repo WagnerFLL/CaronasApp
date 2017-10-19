@@ -9,11 +9,14 @@ import android.support.v4.view.ViewPager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.caronas.fragment.MyPostsFragment;
 import com.google.firebase.caronas.fragment.MyTopPostsFragment;
 import com.google.firebase.caronas.fragment.RecentPostsFragment;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class  MainActivity extends BaseActivity {
 
@@ -21,11 +24,15 @@ public class  MainActivity extends BaseActivity {
 
     private FragmentPagerAdapter mPagerAdapter;
     private ViewPager mViewPager;
+    private DatabaseReference mDatabase;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        mDatabase = FirebaseDatabase.getInstance().getReference();
 
         // Create the adapter that will return a fragment for each section
         mPagerAdapter = new FragmentPagerAdapter(getSupportFragmentManager()) {
@@ -81,9 +88,14 @@ public class  MainActivity extends BaseActivity {
             startActivity(new Intent(this, SignInActivity.class));
             finish();
             return true;
-        } else {
+        } else if(i == R.id.idPermission){
+            final String userId = getUid();
+            mDatabase.child("users").child(userId).child("driver").setValue(true);
+            Toast.makeText(this, "Agora você é um motorista!", Toast.LENGTH_LONG).show();
+        }else {
             return super.onOptionsItemSelected(item);
         }
+        return false;
     }
 
 }

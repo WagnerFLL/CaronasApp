@@ -8,4 +8,7 @@
         android:title="@string/menu_logout"
         android:visible="true"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/idPermission"
+        android:title="Quero ser motorista" />
 </menu>
