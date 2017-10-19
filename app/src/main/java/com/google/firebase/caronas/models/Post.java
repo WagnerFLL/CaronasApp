@@ -34,12 +34,12 @@ public class Post {
     @Exclude
     public Map<String, Object> toMap() {
         HashMap<String, Object> result = new HashMap<>();
-        result.put("uid", uid);
-        result.put("author", author);
-        result.put("title", source);
-        result.put("body", destiny);
-        result.put("starCount", starCount);
-        result.put("stars", stars);
+        result.put("uid", this.uid);
+        result.put("author", this.author);
+        result.put("source", this.source);
+        result.put("destiny", this.destiny);
+        result.put("starCount", this.starCount);
+        result.put("stars", this.stars);
 
         return result;
     }
