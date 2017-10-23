@@ -1,5 +1,6 @@
 package com.google.firebase.caronas.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -11,6 +12,7 @@ import android.view.ViewGroup;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.caronas.PostDetailActivity;
 import com.google.firebase.caronas.models.Post;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -25,6 +27,7 @@ import com.google.firebase.caronas.viewholder.PostViewHolder;
 public abstract class PostListFragment extends Fragment {
 
     private static final String TAG = "PostListFragment";
+
 
 
     private DatabaseReference mDatabase;
@@ -73,28 +76,39 @@ public abstract class PostListFragment extends Fragment {
             }
 
             @Override
-            protected void onBindViewHolder(PostViewHolder viewHolder, int position, final Post model) {
-                final DatabaseReference postRef = getRef(position);
+                protected void onBindViewHolder(PostViewHolder viewHolder, int position, final Post model) {
+                    final DatabaseReference postRef = getRef(position);
 
-                final String postKey = postRef.getKey();
+                    final String postKey = postRef.getKey();
 
-                if (model.stars.containsKey(getUid())) {
-                    viewHolder.starView.setImageResource(R.drawable.ic_toggle_star_24);
-                } else {
-                    viewHolder.starView.setImageResource(R.drawable.ic_toggle_star_outline_24);
-                }
+                    viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            // Launch PostDetailActivity
+                            Intent intent = new Intent(getActivity(), PostDetailActivity.class);
+                            intent.putExtra(PostDetailActivity.EXTRA_POST_KEY, postKey);
+                            intent.putExtra(PostDetailActivity.EXTRA_POST_KEY, postKey);
+                            startActivity(intent);
+                        }
+                    });
 
-                viewHolder.bindToPost(model, new View.OnClickListener() {
-                    @Override
-                    public void onClick(View starView) {
-                        DatabaseReference globalPostRef = mDatabase.child("posts").child(postRef.getKey());
-                        DatabaseReference userPostRef = mDatabase.child("user-posts").child(model.uid).child(postRef.getKey());
-
-                        onStarClicked(globalPostRef);
-                        onStarClicked(userPostRef);
+                     if (model.stars.containsKey(getUid( ))) {
+                        viewHolder.starView.setImageResource(R.drawable.ic_toggle_star_24);
+                    } else {
+                        viewHolder.starView.setImageResource(R.drawable.ic_toggle_star_outline_24);
                     }
-                });
-            }
+
+                    viewHolder.bindToPost(model, new View.OnClickListener() {
+                        @Override
+                        public void onClick(View starView) {
+                            DatabaseReference globalPostRef = mDatabase.child("posts").child(postRef.getKey());
+                            DatabaseReference userPostRef = mDatabase.child("user-posts").child(model.uid).child(postRef.getKey());
+
+                            onStarClicked(globalPostRef);
+                            onStarClicked(userPostRef);
+                        }
+                    });
+                }
         };
         mRecycler.setAdapter(mAdapter);
     }

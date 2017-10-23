@@ -38,6 +38,7 @@ public class Post {
         result.put("author", this.author);
         result.put("source", this.source);
         result.put("destiny", this.destiny);
+        result.put("time", this.time);
         result.put("starCount", this.starCount);
         result.put("stars", this.stars);
 
