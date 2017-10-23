@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="C:\Users\lucas\.android\build-cache\91ba3522e541e6f376d8d443535f4368c656d432\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="6e6b94b72d7912a627fb1629c310b2bca9261f06">
+        <dex dex="C:\Users\lucas\Downloads\CaronasApp-master\CaronasApp-master\app\build\intermediates\pre-dexed\debug\classes_162efe879a3e0e0dd3a559e3786c6ce9fef8adc4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\lucas\.android\build-cache\e5fcd7913438311a541c7497489b507e4b23a4be\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="7efef32744ca4a436492d5cf28c08698cc2af256">
+        <dex dex="C:\Users\lucas\Downloads\CaronasApp-master\CaronasApp-master\app\build\intermediates\pre-dexed\debug\classes_8ede2e53874ad7b92c877e2cf8ef417fb79bc4f0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\lucas\.android\build-cache\7d7071290f660b7b63f8781f82071edb2340fb9a\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="2d45b277afdf55bcfdc005c03c0c2f1733aaa1b0">
+        <dex dex="C:\Users\lucas\Downloads\CaronasApp-master\CaronasApp-master\app\build\intermediates\pre-dexed\debug\classes_d8e92989ab56b29dc4d1078896e9d7c8174d211b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\lucas\.android\build-cache\3fc77ae32b2476e02eddc6ba6dc22f0b01950b77\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="73c80b05a390e8319d1ef7a236739cd610c8f774">
+        <dex dex="C:\Users\lucas\Downloads\CaronasApp-master\CaronasApp-master\app\build\intermediates\pre-dexed\debug\classes_52638695c0015284204eea0d6ca01cafa945fb95.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\lucas\.gradle\caches\modules-2\files-2.1\android.arch.core\common\1.0.0\a2d487452376193fc8c103dd2b9bd5f2b1b44563\common-1.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="a2d487452376193fc8c103dd2b9bd5f2b1b44563">
+        <dex dex="C:\Users\lucas\Downloads\CaronasApp-master\CaronasApp-master\app\build\intermediates\pre-dexed\debug\common-1.0.0_9192bc4a6ead3452971f10b3daebbb87a0c590b5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\lucas\.android\build-cache\e6c11f26b75ac9012930cea7c8b6916bc27b30f9\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="40392f30a601db5675cdf18192aab013d6fee6ec">
+        <dex dex="C:\Users\lucas\Downloads\CaronasApp-master\CaronasApp-master\app\build\intermediates\pre-dexed\debug\classes_675ebee56f559ef9d8208dcd2c3c8976e393d03e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\lucas\.android\build-cache\ce4866f20f1bcf628636ccacdbeeabbbc96cc424\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="8040d53ecd4bd895360eafdc25e1c1cc9479e6aa">
+        <dex dex="C:\Users\lucas\Downloads\CaronasApp-master\CaronasApp-master\app\build\intermediates\pre-dexed\debug\classes_e9b1ee07e12c60455b960f5eea8cde76671aa833.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\lucas\.gradle\caches\modules-2\files-2.1\com.android.support.constraint\constraint-layout-solver\1.1.0-beta3\1a822bfce8ec55cadddedfe602f8c523250d7bc6\constraint-layout-solver-1.1.0-beta3.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="1a822bfce8ec55cadddedfe602f8c523250d7bc6">
+        <dex dex="C:\Users\lucas\Downloads\CaronasApp-master\CaronasApp-master\app\build\intermediates\pre-dexed\debug\constraint-layout-solver-1.1.0-beta3_c838bd4e3e976f3d45fdfc4cef1fe7b9976665bc.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\lucas\.android\build-cache\4502f80aa6f10b7b483b7cc09e0b8b765c77bbbb\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="233f60a165ae622c8b36731502ebbda0f65e1930">
+        <dex dex="C:\Users\lucas\Downloads\CaronasApp-master\CaronasApp-master\app\build\intermediates\pre-dexed\debug\classes_03e8e927e04167f20a8d151881aac849339567b7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\lucas\.android\build-cache\2506c8deabb9a78c1ed454445e9cd9e7fbe91f32\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="6679c7d77ad34dbdf04342adb254dc5892aa04ac">
+        <dex dex="C:\Users\lucas\Downloads\CaronasApp-master\CaronasApp-master\app\build\intermediates\pre-dexed\debug\classes_9799eb5a78e83e65cda95b3cab245c453533991a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\lucas\.android\build-cache\f806f01710679b7683c248ff67df74cc7dced7d7\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="5f519b8c692038a47ee404b6ea6b847f6402000c">
+        <dex dex="C:\Users\lucas\Downloads\CaronasApp-master\CaronasApp-master\app\build\intermediates\pre-dexed\debug\classes_02ce0f62683eb6f937d1049d091f8e37eedd4a67.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\lucas\.android\build-cache\b4b4b0621b1fd3aa2dd43ff6a491b9209af5d231\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="c2cadea4d8a1a5b5c4e5f0dc99a99a43774f5e6e">
+        <dex dex="C:\Users\lucas\Downloads\CaronasApp-master\CaronasApp-master\app\build\intermediates\pre-dexed\debug\classes_a639036cc2baf78094db4f58580d4297e05dc39a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\lucas\.android\build-cache\91d6a7c64b60ad140af25b2b4db1b73804cc1cad\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="b4d6fbbb48b42dd03fd9c5a09b3b7a53266df6ed">
+        <dex dex="C:\Users\lucas\Downloads\CaronasApp-master\CaronasApp-master\app\build\intermediates\pre-dexed\debug\classes_9cfb69d78914d1caf5fe64197491a42947109feb.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\lucas\.gradle\caches\modules-2\files-2.1\android.arch.lifecycle\common\1.0.0\e414a4cb28434e25c4f6aa71426eb20cf4874ae9\common-1.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="e414a4cb28434e25c4f6aa71426eb20cf4874ae9">
+        <dex dex="C:\Users\lucas\Downloads\CaronasApp-master\CaronasApp-master\app\build\intermediates\pre-dexed\debug\common-1.0.0_6f33fc67aa036280ff1fb497b1531427e029ec25.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\lucas\.android\build-cache\131a23f91c521aeacf5ea9ffccded2db9cdaed2c\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="643a2fd3bd06c44be5d20efc0ba4ca02036d2c8a">
+        <dex dex="C:\Users\lucas\Downloads\CaronasApp-master\CaronasApp-master\app\build\intermediates\pre-dexed\debug\classes_764bd6fa2e19c17c2885be669b719ae76926c657.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\lucas\.android\build-cache\b9bd448e4e84f38bfffd2da42102ceb9c6ce4670\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="f97cf85b0fe70d37a705111dafa6b1b418ea1650">
+        <dex dex="C:\Users\lucas\Downloads\CaronasApp-master\CaronasApp-master\app\build\intermediates\pre-dexed\debug\classes_d30b61a9161fa54275dd6a5616d35670747e0a56.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\lucas\.android\build-cache\1e186215ba741a707a0341541023f3dc24b87050\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="6f4138a4e065826cb044d49faea4cfd7191773d1">
+        <dex dex="C:\Users\lucas\Downloads\CaronasApp-master\CaronasApp-master\app\build\intermediates\pre-dexed\debug\classes_2cde89bbaac4d23104cd5cb460c7835ff6174a02.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\lucas\.gradle\caches\modules-2\files-2.1\com.android.support\support-annotations\26.1.0\814258103cf26a15fcc26ecce35f5b7d24b73f8\support-annotations-26.1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="0814258103cf26a15fcc26ecce35f5b7d24b73f8">
+        <dex dex="C:\Users\lucas\Downloads\CaronasApp-master\CaronasApp-master\app\build\intermediates\pre-dexed\debug\support-annotations-26.1.0_cb3cfe7bc96e267569c6eb8bc1ed537d566bd6f1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\lucas\.android\build-cache\1f156123edb09616bced2e3d603f7eab89d07d02\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="241bafb36b47aee8c8c34acd08a1e7d735a66ff0">
+        <dex dex="C:\Users\lucas\Downloads\CaronasApp-master\CaronasApp-master\app\build\intermediates\pre-dexed\debug\classes_64885ab889da8526779d959a4713438ec11acdcc.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\lucas\.android\build-cache\ede2fb4b0f571f4a000ed75a15c208b3df012212\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="508f50705b4fde51a16259f29c854201a3044516">
+        <dex dex="C:\Users\lucas\Downloads\CaronasApp-master\CaronasApp-master\app\build\intermediates\pre-dexed\debug\classes_d4e56547155ac0c711a9446fdcd4045d1b399d77.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\lucas\.android\build-cache\c51d1e92df245d465e404ddb8583560b94b066c0\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="55a56e57f9c69ec1e3099ceb677c7be501e9f79c">
+        <dex dex="C:\Users\lucas\Downloads\CaronasApp-master\CaronasApp-master\app\build\intermediates\pre-dexed\debug\classes_9a69a853538ffcfdec4194979fa8192351ff8760.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\lucas\.android\build-cache\c59ad73c09c557aad336fc4c84da629783b246d7\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="a37fc31c5ceeaa4532a37358add1b189d8db4af1">
+        <dex dex="C:\Users\lucas\Downloads\CaronasApp-master\CaronasApp-master\app\build\intermediates\pre-dexed\debug\classes_47bae669610eece6c3ec773d3b2de6b69fe4e0a1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\lucas\.android\build-cache\8558374cba28bdbd54fd0c2e4d413373a8b70802\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="ccad5f56bf5c771ec3e85165be9ab0d0948c27aa">
+        <dex dex="C:\Users\lucas\Downloads\CaronasApp-master\CaronasApp-master\app\build\intermediates\pre-dexed\debug\classes_e9ca845f0657900e4ab8a4615691ffee4628201b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\lucas\.android\build-cache\f74ee27d75f1a41301c669ceea415f4f229d3d09\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="b62fdc4cfef174c1e456014195c83fa7de7dc041">
+        <dex dex="C:\Users\lucas\Downloads\CaronasApp-master\CaronasApp-master\app\build\intermediates\pre-dexed\debug\classes_0856fd7f7346b17245e233a72a9ea0fe66717a7d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\lucas\.android\build-cache\d2ba9684d3d9a823c624d179b6b03a598e62eaf2\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="bed98ea7af8c5c4202820875e856dd3eb296e22d">
+        <dex dex="C:\Users\lucas\Downloads\CaronasApp-master\CaronasApp-master\app\build\intermediates\pre-dexed\debug\classes_2221145bf2fbc5884be6cf6bc53c27ce366a2a7c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\lucas\.android\build-cache\db32292bc1623271bfb2043387273426f5b528a5\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="52339832d252da4328c5ffcacbc205268346362a">
+        <dex dex="C:\Users\lucas\Downloads\CaronasApp-master\CaronasApp-master\app\build\intermediates\pre-dexed\debug\classes_ad4174c1cbe91c9bd8559b1c7218b7c6337b0c41.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\lucas\.android\build-cache\206b9c6d711e9925bb4d45bbed7c2b34bcf29da1\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="20d6aa9a18ea9833cd2bee95dff7cd303cdb80e4">
+        <dex dex="C:\Users\lucas\Downloads\CaronasApp-master\CaronasApp-master\app\build\intermediates\pre-dexed\debug\classes_d567831aff8f33c40ffee158906578a9d9b5080f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\lucas\.android\build-cache\564842535e90778214f0fab1f98aba71eb67d96d\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="9176f96bb623ac8bbd2b79942d9e419f72f95301">
+        <dex dex="C:\Users\lucas\Downloads\CaronasApp-master\CaronasApp-master\app\build\intermediates\pre-dexed\debug\classes_a1fcac3f46a67fcdc608dd960b4ccf4ae39136b1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\lucas\.android\build-cache\60c379f02a0924a215839036917a970cbd1b193e\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="f428e2fbc9ed0b297e3a3f420e51e6982f66822d">
+        <dex dex="C:\Users\lucas\Downloads\CaronasApp-master\CaronasApp-master\app\build\intermediates\pre-dexed\debug\classes_e5955ea53d07af0b2938dea43b95a9548b8c8991.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\lucas\.android\build-cache\41ca707eb4a9cb236a17dd23154a5f3d2cfbb48a\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\Users\lucas\Downloads\CaronasApp-master\CaronasApp-master\app\build\intermediates\pre-dexed\debug\classes_246d38461b084ff9d6ced3e8a2272954b71cfa0f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\lucas\.android\build-cache\5b2df416b264ba0434af05f86e991996e6eb07e4\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="58b12bdb21a84f22e0dc3b047aeceb0a546b1b44">
+        <dex dex="C:\Users\lucas\Downloads\CaronasApp-master\CaronasApp-master\app\build\intermediates\pre-dexed\debug\classes_ed7cdd7f7f328962cff5e0dc4afcdef171d521c9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\lucas\.android\build-cache\ef1b9a5c67fac7017aff607ccf881aa36bc28199\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="b12cd9c87c3dfb012a911b6e38d2444ed0a65e1f">
+        <dex dex="C:\Users\lucas\Downloads\CaronasApp-master\CaronasApp-master\app\build\intermediates\pre-dexed\debug\classes_53d6df8a65e46369817328c7087851c361996b27.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\lucas\.android\build-cache\dcfeb62861b75bcdd44e7c9af595e4447b2882a8\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="2442771a5590dd4eb4bce00c2e9dca9e22e4c963">
+        <dex dex="C:\Users\lucas\Downloads\CaronasApp-master\CaronasApp-master\app\build\intermediates\pre-dexed\debug\classes_de736217ed60ca8f91093e810fd1be8c4d751c81.jar" />
+    </item>
+
+</items>
