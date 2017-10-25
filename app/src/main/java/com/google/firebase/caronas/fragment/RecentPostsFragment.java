@@ -12,7 +12,6 @@ public class RecentPostsFragment extends PostListFragment {
 
         Query recentPostsQuery = databaseReference.child("posts")
                 .limitToFirst(100);
-
         return recentPostsQuery;
     }
 }

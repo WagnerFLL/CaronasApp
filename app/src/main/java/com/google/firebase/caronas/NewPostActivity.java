@@ -6,6 +6,8 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -30,16 +32,16 @@ public class NewPostActivity extends BaseActivity {
     private EditText mDestinyField;
     private EditText mTimeField;
     private FloatingActionButton mSubmitButton;
+    private RadioGroup mRadios;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_post);
 
-
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
-
+        mRadios = findViewById(R.id.RadioGPID);
         mSourceField = findViewById(R.id.field_source);
         mDestinyField = findViewById(R.id.field_destiny);
         mTimeField = findViewById(R.id.field_time);
@@ -74,6 +76,22 @@ public class NewPostActivity extends BaseActivity {
             return;
         }
 
+        final boolean choice;
+        switch ( mRadios.getCheckedRadioButtonId() ){
+            case R.id.radioButtonOferta:
+                choice = true;
+                break;
+            case R.id.radioButtonPedido:
+                choice = false;
+                break;
+            default:
+                RadioButton a1 = findViewById(R.id.radioButtonOferta);
+                a1.setError(REQUIRED);
+                RadioButton a2 = findViewById(R.id.radioButtonPedido);
+                a2.setError(REQUIRED);
+                return;
+        }
+
 
         setEditingEnabled(false);
         Toast.makeText(this, "Postando...", Toast.LENGTH_SHORT).show();
@@ -96,7 +114,7 @@ public class NewPostActivity extends BaseActivity {
                                     Toast.LENGTH_SHORT).show();
                         } else {
 
-                            writeNewPost(userId, user.username, source, destiny, time);
+                            writeNewPost(userId, user.username, source, destiny, time,choice);
                         }
 
                         setEditingEnabled(true);
@@ -122,14 +140,18 @@ public class NewPostActivity extends BaseActivity {
         }
     }
 
-    private void writeNewPost(String userId, String username, String source, String destiny, String time) {
+    private void writeNewPost(String userId, String username, String source, String destiny, String time,Boolean choice) {
         String key = mDatabase.child("posts").push().getKey();
         Post post = new Post(userId, username, source, destiny, time);
         Map<String, Object> postValues = post.toMap();
 
         Map<String, Object> childUpdates = new HashMap<>();
         childUpdates.put("/posts/" + key, postValues);
-        childUpdates.put("/user-posts/" + userId + "/" + key, postValues);
+        if(choice) {
+            childUpdates.put("/user-posts/" + userId + "/oferta/" + key, postValues);
+        }else{
+            childUpdates.put("/user-posts/" + userId + "/pedido/" + key, postValues);
+        }
 
         mDatabase.updateChildren(childUpdates);
     }
