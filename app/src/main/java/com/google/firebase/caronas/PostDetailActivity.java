@@ -50,17 +50,14 @@ public class PostDetailActivity extends BaseActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post_detail);
 
-        // Get post key from intent
         mPostKey = getIntent().getStringExtra(EXTRA_POST_KEY);
         if (mPostKey == null) {
             throw new IllegalArgumentException("Must pass EXTRA_POST_KEY");
         }
 
-        // Initialize Database
         mPostReference = FirebaseDatabase.getInstance().getReference()
                 .child("posts").child(mPostKey);
 
-        // Initialize Views
         mAuthorView = findViewById(R.id.post_author);
         mSourceView = findViewById(R.id.post_source);
         mDestinyView = findViewById(R.id.post_destiny);
@@ -73,7 +70,6 @@ public class PostDetailActivity extends BaseActivity  {
                 .addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
-                        // get total available quest
                         size = dataSnapshot.getChildrenCount();
                     }
                     @Override
