@@ -54,4 +54,27 @@
         android:layout_margin="16dp"
         android:src="@drawable/ic_navigation_check_24"/>
 
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_alignLeft="@+id/field_time"
+        android:layout_alignStart="@+id/field_time"
+        android:id="@+id/RadioGPID">
+
+        <RadioButton
+            android:text="Oferta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButtonOferta"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:text="Pedido"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButtonPedido"
+            android:layout_weight="1" />
+    </RadioGroup>
+
 </RelativeLayout>
