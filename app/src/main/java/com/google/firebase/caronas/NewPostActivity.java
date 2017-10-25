@@ -140,7 +140,7 @@ public class NewPostActivity extends BaseActivity {
         }
     }
 
-    private void writeNewPost(String userId, String username, String source, String destiny, String time,Boolean choice) {
+    private void writeNewPost(String userId, String username, String source, String destiny, String time, Boolean choice) {
         String key = mDatabase.child("posts").push().getKey();
         Post post = new Post(userId, username, source, destiny, time);
         Map<String, Object> postValues = post.toMap();
@@ -148,9 +148,9 @@ public class NewPostActivity extends BaseActivity {
         Map<String, Object> childUpdates = new HashMap<>();
         childUpdates.put("/posts/" + key, postValues);
         if(choice) {
-            childUpdates.put("/user-posts/" + userId + "/oferta/" + key, postValues);
+            childUpdates.put("/user-posts/oferta/" + key, postValues);
         }else{
-            childUpdates.put("/user-posts/" + userId + "/pedido/" + key, postValues);
+            childUpdates.put("/user-posts/pedido/" + key, postValues);
         }
 
         mDatabase.updateChildren(childUpdates);

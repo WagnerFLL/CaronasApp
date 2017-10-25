@@ -69,7 +69,7 @@ public class PostDetailActivity extends BaseActivity  {
 
         fbDb = FirebaseDatabase.getInstance().getReference();
 
-                fbDb.child("user-posts").child(getUid())
+        fbDb.child("user-posts").child(getUid()).child("oferta")
                 .addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
@@ -81,43 +81,32 @@ public class PostDetailActivity extends BaseActivity  {
 
                     }
                 });
-
     }
 
     @Override
     public void onStart() {
         super.onStart();
 
-        // Add value event listener to the post
-        // [START post_value_event_listener]
         ValueEventListener postListener = new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                // Get Post object and use the values to update the UI
                 Post post = dataSnapshot.getValue(Post.class);
-                // [START_EXCLUDE]
                 mAuthorView.setText(post.author);
                 mSourceView.setText(post.source);
                 mDestinyView.setText(post.destiny);
                 mTimeView.setText(post.time);
                 mRideCountView.setText(String.valueOf(size));
-                // [END_EXCLUDE]
             }
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-                // Getting Post failed, log a message
                 Log.w(TAG, "loadPost:onCancelled", databaseError.toException());
-                // [START_EXCLUDE]
                 Toast.makeText(PostDetailActivity.this, "Failed to load post.",
                         Toast.LENGTH_SHORT).show();
-                // [END_EXCLUDE]
             }
         };
         mPostReference.addValueEventListener(postListener);
-        // [END post_value_event_listener]
 
-        // Keep copy of post listener so we can remove it when app stops
         mPostListener = postListener;
 
     }
@@ -127,12 +116,10 @@ public class PostDetailActivity extends BaseActivity  {
     public void onStop() {
         super.onStop();
 
-        // Remove post value event listener
         if (mPostListener != null) {
             mPostReference.removeEventListener(mPostListener);
         }
 
-        // Clean up comments listener
     }
 
 
