@@ -59,7 +59,7 @@ public class PostDetailActivity extends BaseActivity  {
         }
 
         mPostReference = FirebaseDatabase.getInstance().getReference()
-                .child("posts").child(mPostKey);
+                .child("posts/all").child(mPostKey);
 
         share = findViewById(R.id.shareID);
         mAuthorView = findViewById(R.id.post_author);
@@ -68,19 +68,15 @@ public class PostDetailActivity extends BaseActivity  {
         mTimeView = findViewById(R.id.post_time);
         mRideCountView = findViewById(R.id.user_ride_count);
 
-        fbDb = FirebaseDatabase.getInstance().getReference();
+        /*
+        var ref = firebase.database().ref("users/ada");
+        ref.once("value")
+          .then(function(snapshot) {
+            var key = snapshot.key; // "ada"
+            var childKey = snapshot.child("name/last").key; // "last"
+          });
+         */
 
-        fbDb.child("user-posts").child(getUid()).child("oferta")
-                .addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(DataSnapshot dataSnapshot) {
-                        size = dataSnapshot.getChildrenCount();
-                    }
-                    @Override
-                    public void onCancelled(DatabaseError databaseError) {
-
-                    }
-                });
 
         share.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -94,16 +90,40 @@ public class PostDetailActivity extends BaseActivity  {
     @Override
     public void onStart() {
         super.onStart();
+/*
+        fbDb = FirebaseDatabase.getInstance().getReference();
 
+        fbDb.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    Post post = dataSnapshot.getValue(Post.class);
+                    //dataSnapshot.child("user-posts").child("oferta").child(post.uid).getChildrenCount();
+                    mAuthorView.setText(post.author);
+                    mSourceView.setText(post.source);
+                    mDestinyView.setText(post.destiny);
+                    mTimeView.setText(post.time);
+                    mRideCountView.setText(String.valueOf(size));
+                }
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+
+                }
+            }
+        );
+        */
         ValueEventListener postListener = new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+
                 Post post = dataSnapshot.getValue(Post.class);
+                long size = dataSnapshot.child("user-posts").child(post.uid).child("oferta").getChildrenCount();
                 mAuthorView.setText(post.author);
                 mSourceView.setText(post.source);
                 mDestinyView.setText(post.destiny);
                 mTimeView.setText(post.time);
                 mRideCountView.setText(String.valueOf(size));
+
+
             }
 
             @Override
@@ -113,6 +133,7 @@ public class PostDetailActivity extends BaseActivity  {
                         Toast.LENGTH_SHORT).show();
             }
         };
+
         mPostReference.addValueEventListener(postListener);
 
         mPostListener = postListener;

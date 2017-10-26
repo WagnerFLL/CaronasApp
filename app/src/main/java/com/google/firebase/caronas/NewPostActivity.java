@@ -146,11 +146,14 @@ public class NewPostActivity extends BaseActivity {
         Map<String, Object> postValues = post.toMap();
 
         Map<String, Object> childUpdates = new HashMap<>();
-        childUpdates.put("/posts/" + key, postValues);
+        childUpdates.put("/user-posts/" + getUid() + "/all/" + key, postValues);
+        childUpdates.put("/posts/all/" + key, postValues);
         if(choice) {
-            childUpdates.put("/user-posts/oferta/" + key, postValues);
+            childUpdates.put("/user-posts/" + getUid() + "/oferta/" + key, postValues);
+            childUpdates.put("/posts/oferta/" + key, postValues);
         }else{
-            childUpdates.put("/user-posts/pedido/" + key, postValues);
+            childUpdates.put("/user-posts/" + getUid() + "/pedido/" + key, postValues);
+            childUpdates.put("/posts/pedido/" + key, postValues);
         }
 
         mDatabase.updateChildren(childUpdates);

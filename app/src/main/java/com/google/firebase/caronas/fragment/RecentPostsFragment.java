@@ -10,7 +10,7 @@ public class RecentPostsFragment extends PostListFragment {
     @Override
     public Query getQuery(DatabaseReference databaseReference) {
 
-        Query recentPostsQuery = databaseReference.child("posts")
+        Query recentPostsQuery = databaseReference.child("user-posts/" + getUid() + "/all")
                 .limitToFirst(100);
         return recentPostsQuery;
     }
