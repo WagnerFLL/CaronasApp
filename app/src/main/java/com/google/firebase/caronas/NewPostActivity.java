@@ -20,6 +20,8 @@ import com.google.firebase.caronas.models.User;
 import java.util.HashMap;
 import java.util.Map;
 
+import static android.R.attr.key;
+
 public class NewPostActivity extends BaseActivity {
 
     private static final String TAG = "NewPostActivity";
@@ -33,6 +35,7 @@ public class NewPostActivity extends BaseActivity {
     private EditText mTimeField;
     private FloatingActionButton mSubmitButton;
     private RadioGroup mRadios;
+    private EditText vagas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +43,7 @@ public class NewPostActivity extends BaseActivity {
         setContentView(R.layout.activity_new_post);
 
         mDatabase = FirebaseDatabase.getInstance().getReference();
-
+        vagas = findViewById(R.id.editTextVagas);
         mRadios = findViewById(R.id.RadioGPID);
         mSourceField = findViewById(R.id.field_source);
         mDestinyField = findViewById(R.id.field_destiny);
@@ -80,6 +83,10 @@ public class NewPostActivity extends BaseActivity {
         switch ( mRadios.getCheckedRadioButtonId() ){
             case R.id.radioButtonOferta:
                 choice = true;
+                if (TextUtils.isEmpty(vagas.getText())){
+                    vagas.setError(REQUIRED);
+                    return;
+                }
                 break;
             case R.id.radioButtonPedido:
                 choice = false;
@@ -113,8 +120,12 @@ public class NewPostActivity extends BaseActivity {
                                     "Error: could not fetch user.",
                                     Toast.LENGTH_SHORT).show();
                         } else {
+                            if(choice){
+                                writeNewPost(userId, user.username, source, destiny, time,choice, Integer.parseInt(vagas.getText().toString()));
+                            }else{
+                                writeNewPost(userId, user.username, source, destiny, time,choice, -1);
+                            }
 
-                            writeNewPost(userId, user.username, source, destiny, time,choice);
                         }
 
                         setEditingEnabled(true);
@@ -140,9 +151,10 @@ public class NewPostActivity extends BaseActivity {
         }
     }
 
-    private void writeNewPost(String userId, String username, String source, String destiny, String time, Boolean choice) {
+    private void writeNewPost(String userId, String username, String source, String destiny, String time, Boolean choice, int intVagas) {
+
         String key = mDatabase.child("posts").push().getKey();
-        Post post = new Post(userId, username, source, destiny, time);
+        Post post = new Post(userId, username, source, destiny, time, intVagas);
         Map<String, Object> postValues = post.toMap();
 
         Map<String, Object> childUpdates = new HashMap<>();

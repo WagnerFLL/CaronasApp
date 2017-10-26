@@ -1,33 +1,26 @@
 package com.google.firebase.caronas;
 
-import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.caronas.models.User;
 import com.google.firebase.caronas.models.Post;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 public class PostDetailActivity extends BaseActivity  {
 
@@ -36,10 +29,9 @@ public class PostDetailActivity extends BaseActivity  {
     public static final String EXTRA_POST_KEY = "post_key";
 
     private DatabaseReference mPostReference;
-    private DatabaseReference fbDb;
     private ValueEventListener mPostListener;
     private String mPostKey;
-
+    private Button acpt;
     private TextView mAuthorView;
     private TextView mSourceView;
     private TextView mDestinyView;
@@ -47,6 +39,10 @@ public class PostDetailActivity extends BaseActivity  {
     private TextView mRideCountView;
     private Button share;
     private String stringPost;
+    private DatabaseReference mDatabase;
+    private ArrayList<String> passageiros;
+    private int nPassageiros;
+    private int maxP;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,28 +53,52 @@ public class PostDetailActivity extends BaseActivity  {
         if (mPostKey == null) {
             throw new IllegalArgumentException("Must pass EXTRA_POST_KEY");
         }
-
+        mDatabase = FirebaseDatabase.getInstance().getReference();
         mPostReference = FirebaseDatabase.getInstance().getReference()
                 .child("posts/all").child(mPostKey);
 
+        acpt =  findViewById(R.id.accept_ride);
         share = findViewById(R.id.shareID);
         mAuthorView = findViewById(R.id.post_author);
         mSourceView = findViewById(R.id.post_source);
         mDestinyView = findViewById(R.id.post_destiny);
         mTimeView = findViewById(R.id.post_time);
         mRideCountView = findViewById(R.id.user_ride_count);
-
-        try {
-            stringPost = URLEncoder.encode("Olá pessoal, acabei de fazer uma oferta de carona no app. Venham conferir!", "utf-8");
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
+        passageiros = new ArrayList<>();
 
         share.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                try {
+                    stringPost = URLEncoder.encode("Olá pessoal, acabei de fazer uma oferta de carona no app. Venham conferir!", "utf-8");
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                }
                 startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://the-dank-network.herokuapp.com/post?content="+stringPost)));
             }
+        });
+
+        final Map<String,Object> update = new HashMap<>();
+
+        acpt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(passageiros.contains(getUid()) ){
+                    Toast.makeText(PostDetailActivity.this, "Você já está nesta viagem!", Toast.LENGTH_SHORT).show();
+                }else if(maxP == -1){
+                    Toast.makeText(PostDetailActivity.this, "Essa não é uma oferta.", Toast.LENGTH_SHORT).show();
+                }else if ( nPassageiros == maxP) {
+                    Toast.makeText(PostDetailActivity.this, "A viagem está lotada!", Toast.LENGTH_SHORT).show();
+                }else if(mAuthorView.getText().equals(getUid())){
+                    Toast.makeText(PostDetailActivity.this, "Você é o otorista aqui.", Toast.LENGTH_SHORT).show();
+                }else{
+                        passageiros.add(getUid());
+                        update.put("/posts/all/"+mPostKey+"/passageiros",passageiros);
+                        update.put("/posts/all/"+mPostKey+"/nPassageiros",nPassageiros+1);
+                        mDatabase.updateChildren(update);
+                        Toast.makeText(PostDetailActivity.this, "O motorista será notificado.", Toast.LENGTH_SHORT).show();
+                    }
+                }
         });
 
     }
@@ -98,6 +118,9 @@ public class PostDetailActivity extends BaseActivity  {
                 mDestinyView.setText(post.destiny);
                 mTimeView.setText(post.time);
                 mRideCountView.setText(String.valueOf(size));
+                passageiros = post.passageiros;
+                nPassageiros = post.nPassageiros;
+                maxP = post.maxP;
             }
 
             @Override
