@@ -24,6 +24,8 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.caronas.models.User;
 import com.google.firebase.caronas.models.Post;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -45,8 +47,6 @@ public class PostDetailActivity extends BaseActivity  {
     private TextView mRideCountView;
     private Button share;
     private String stringPost;
-    public long size;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,15 +68,11 @@ public class PostDetailActivity extends BaseActivity  {
         mTimeView = findViewById(R.id.post_time);
         mRideCountView = findViewById(R.id.user_ride_count);
 
-        /*
-        var ref = firebase.database().ref("users/ada");
-        ref.once("value")
-          .then(function(snapshot) {
-            var key = snapshot.key; // "ada"
-            var childKey = snapshot.child("name/last").key; // "last"
-          });
-         */
-
+        try {
+            stringPost = URLEncoder.encode("Olá pessoal, acabei de fazer uma oferta de carona no app. Venham conferir!", "utf-8");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
 
         share.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -90,27 +86,7 @@ public class PostDetailActivity extends BaseActivity  {
     @Override
     public void onStart() {
         super.onStart();
-/*
-        fbDb = FirebaseDatabase.getInstance().getReference();
 
-        fbDb.addListenerForSingleValueEvent(new ValueEventListener() {
-                @Override
-                public void onDataChange(DataSnapshot dataSnapshot) {
-                    Post post = dataSnapshot.getValue(Post.class);
-                    //dataSnapshot.child("user-posts").child("oferta").child(post.uid).getChildrenCount();
-                    mAuthorView.setText(post.author);
-                    mSourceView.setText(post.source);
-                    mDestinyView.setText(post.destiny);
-                    mTimeView.setText(post.time);
-                    mRideCountView.setText(String.valueOf(size));
-                }
-                @Override
-                public void onCancelled(DatabaseError databaseError) {
-
-                }
-            }
-        );
-        */
         ValueEventListener postListener = new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -122,8 +98,6 @@ public class PostDetailActivity extends BaseActivity  {
                 mDestinyView.setText(post.destiny);
                 mTimeView.setText(post.time);
                 mRideCountView.setText(String.valueOf(size));
-
-
             }
 
             @Override
