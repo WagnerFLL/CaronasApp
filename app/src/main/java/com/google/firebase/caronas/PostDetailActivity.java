@@ -1,6 +1,8 @@
 package com.google.firebase.caronas;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -41,8 +43,9 @@ public class PostDetailActivity extends BaseActivity  {
     private TextView mDestinyView;
     private TextView mTimeView;
     private TextView mRideCountView;
+    private Button share;
+    private String stringPost;
     public long size;
-
 
 
     @Override
@@ -58,6 +61,7 @@ public class PostDetailActivity extends BaseActivity  {
         mPostReference = FirebaseDatabase.getInstance().getReference()
                 .child("posts").child(mPostKey);
 
+        share = findViewById(R.id.shareID);
         mAuthorView = findViewById(R.id.post_author);
         mSourceView = findViewById(R.id.post_source);
         mDestinyView = findViewById(R.id.post_destiny);
@@ -77,6 +81,14 @@ public class PostDetailActivity extends BaseActivity  {
 
                     }
                 });
+
+        share.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://the-dank-network.herokuapp.com/post?content="+stringPost)));
+            }
+        });
+
     }
 
     @Override
