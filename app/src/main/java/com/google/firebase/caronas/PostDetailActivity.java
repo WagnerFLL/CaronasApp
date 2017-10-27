@@ -73,11 +73,18 @@ public class PostDetailActivity extends BaseActivity  {
             @Override
             public void onClick(View v) {
                 try {
-                    stringPost = URLEncoder.encode("Olá pessoal, acabei de fazer uma oferta de carona no app. Venham conferir!", "utf-8");
+                    if(maxP == -1){
+                        stringPost = URLEncoder.encode("Olá pessoal, estou precisando de uma carona para "+mDestinyView.getText().toString(), "utf-8").replace("+","%20");
+                        String img = URLEncoder.encode("http://vivamaisverde.com.br/wp-content/uploads/2011/05/carona-capa-720x340.jpg","utf-8");
+                        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://the-dank-network.herokuapp.com/post?content="+stringPost+"&imageUrl="+img)));
+                    }else{
+                        stringPost = URLEncoder.encode("Olá pessoal, acabei de fazer uma oferta de carona no app. Venham conferir!", "utf-8").replace("+","%20");
+                        String img = URLEncoder.encode("http://nomadesdigitais.com/wp-content/uploads/2014/05/mb-home.jpg","utf-8");
+                        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://the-dank-network.herokuapp.com/post?content="+stringPost+"&imageUrl="+img)));
+                    }
                 } catch (UnsupportedEncodingException e) {
                     e.printStackTrace();
                 }
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://the-dank-network.herokuapp.com/post?content="+stringPost)));
             }
         });
 
