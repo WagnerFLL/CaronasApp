@@ -19,7 +19,6 @@ import com.firebase.client.FirebaseError;
 
 import java.util.HashMap;
 import java.util.Map;
-import com.firebase.client.Firebase;
 
 
 public class ChatActivity extends AppCompatActivity {

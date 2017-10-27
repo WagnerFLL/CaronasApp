@@ -1,19 +1,19 @@
 <resources>
-    <string name="app_name">Firebase Database</string>
-    <string name="action_settings">Settings</string>
-    <string name="menu_login">Log in</string>
-    <string name="menu_logout">Log out</string>
-    <string name="login_label">Log In</string>
+    <string name="app_name">CaronaApp</string>
+    <string name="action_settings">Configurações</string>
+    <string name="menu_login">Entrar</string>
+    <string name="menu_logout">Sair</string>
+    <string name="login_label">Entrar</string>
     <string name="email_label">Email</string>
     <string name="password_label">Password</string>
-    <string name="send_text">Send</string>
+    <string name="send_text">Enviar</string>
     <string name="lorem">Lorem ipsum dolor</string>
-    <string name="title_sign_in">Welcome</string>
-    <string name="sign_up">Sign Up</string>
+    <string name="title_sign_in">Bem Vindo</string>
+    <string name="sign_up">Registrar</string>
     <string name="hint_password">password</string>
     <string name="hint_email">email</string>
-    <string name="sign_in">Sign In</string>
-    <string name="heading_recent">Recentes</string>
+    <string name="sign_in">Logar</string>
+    <string name="heading_recent">Meus</string>
     <string name="heading_my_posts">Ofertas</string>
     <string name="heading_my_top_posts">Pedidos</string>
 </resources>

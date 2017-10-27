@@ -123,7 +123,7 @@
         android:text="Aceitar Carona"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.68"
+        app:layout_constraintVertical_bias="0.676"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintHorizontal_bias="0.502" />
@@ -143,13 +143,17 @@
     <Button
         android:id="@+id/chat_button"
         style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_below="@+id/accept_ride"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:text="Chat"
         tools:text="Chat"
-        tools:layout_editor_absoluteY="420dp"
-        tools:layout_editor_absoluteX="148dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.801"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent" />
 
 
 </android.support.constraint.ConstraintLayout>

@@ -80,7 +80,7 @@ public class SignInActivity extends BaseActivity implements View.OnClickListener
                         if (task.isSuccessful()) {
                             onAuthSuccess(task.getResult().getUser());
                         } else {
-                            Toast.makeText(SignInActivity.this, "Sign In Failed",
+                            Toast.makeText(SignInActivity.this, "Campos incorretos",
                                     Toast.LENGTH_SHORT).show();
                         }
                     }
@@ -107,7 +107,7 @@ public class SignInActivity extends BaseActivity implements View.OnClickListener
                         if (task.isSuccessful()) {
                             onAuthSuccess(task.getResult().getUser());
                         } else {
-                            Toast.makeText(SignInActivity.this, "Sign Up Failed",
+                            Toast.makeText(SignInActivity.this, "Registro falhou",
                                     Toast.LENGTH_SHORT).show();
                         }
                     }
@@ -136,14 +136,14 @@ public class SignInActivity extends BaseActivity implements View.OnClickListener
     private boolean validateForm() {
         boolean result = true;
         if (TextUtils.isEmpty(mEmailField.getText().toString())) {
-            mEmailField.setError("Required");
+            mEmailField.setError("Obrigatorio");
             result = false;
         } else {
             mEmailField.setError(null);
         }
 
         if (TextUtils.isEmpty(mPasswordField.getText().toString())) {
-            mPasswordField.setError("Required");
+            mPasswordField.setError("Obrigatorio");
             result = false;
         } else {
             mPasswordField.setError(null);

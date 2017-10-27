@@ -25,7 +25,7 @@ import static android.R.attr.key;
 public class NewPostActivity extends BaseActivity {
 
     private static final String TAG = "NewPostActivity";
-    private static final String REQUIRED = "Required";
+    private static final String REQUIRED = "Obrigatorio";
 
     private DatabaseReference mDatabase;
 
@@ -115,9 +115,9 @@ public class NewPostActivity extends BaseActivity {
 
                         if (user == null) {
 
-                            Log.e(TAG, "User " + userId + " is unexpectedly null");
+                            Log.e(TAG, "User " + userId + " é nulo");
                             Toast.makeText(NewPostActivity.this,
-                                    "Error: could not fetch user.",
+                                    "Usuario nao encontrado",
                                     Toast.LENGTH_SHORT).show();
                         } else {
                             if(choice){
