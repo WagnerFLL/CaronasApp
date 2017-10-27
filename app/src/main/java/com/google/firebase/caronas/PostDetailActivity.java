@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -32,6 +33,7 @@ public class PostDetailActivity extends BaseActivity  {
     private ValueEventListener mPostListener;
     private String mPostKey;
     private Button acpt;
+    private Button chat;
     private TextView mAuthorView;
     private TextView mSourceView;
     private TextView mDestinyView;
@@ -59,6 +61,7 @@ public class PostDetailActivity extends BaseActivity  {
 
         acpt =  findViewById(R.id.accept_ride);
         share = findViewById(R.id.shareID);
+        chat = findViewById(R.id.chat_button);
         mAuthorView = findViewById(R.id.post_author);
         mSourceView = findViewById(R.id.post_source);
         mDestinyView = findViewById(R.id.post_destiny);
@@ -121,6 +124,28 @@ public class PostDetailActivity extends BaseActivity  {
                 passageiros = post.passageiros;
                 nPassageiros = post.nPassageiros;
                 maxP = post.maxP;
+
+                final String destinyUid = post.uid;
+                final String sourceUid = getUid();
+
+                final String email = getEmail();
+                final String username = usernameFromEmail(email);
+                final String chatWith = post.author;
+
+                chat.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(v.getContext(), ChatActivity.class);
+
+                        intent.putExtra("destiny_uid", destinyUid);
+                        intent.putExtra("source_uid", sourceUid);
+
+                        intent.putExtra("user_name", username);
+                        intent.putExtra("chat_with", chatWith);
+
+                        startActivity(intent);
+                    }
+                });
             }
 
             @Override
@@ -146,6 +171,18 @@ public class PostDetailActivity extends BaseActivity  {
             mPostReference.removeEventListener(mPostListener);
         }
 
+    }
+
+    public String getEmail() {
+        return FirebaseAuth.getInstance().getCurrentUser().getEmail();
+    }
+
+    private String usernameFromEmail(String email) {
+        if (email.contains("@")) {
+            return email.split("@")[0];
+        } else {
+            return email;
+        }
     }
 
 
